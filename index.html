@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Baptiste Labat Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #4CAF50;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            text-align: center;
+            margin: 40px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #FFD700;
+        }
+        .image-container {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 10px;
+        }
+        .cool-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .navigation {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #FFD700;
+            color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s ease-in-out;
+            font-size: 1.2em;
+        }
+        .nav-button:hover {
+            background-color: #FFA500;
+            color: white;
+            transform: scale(1.1);
+        }
+        .current-page {
+            background-color: #FFA500;
+            color: white;
+        }
+        #did-you-know {
+            background-color: #fff;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            width: 100%;
+            color: #4CAF50;
+        }
+        #did-you-know h3 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        #fact-container {
+            min-height: 50px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO THE OFFICIAL<br>JEAN BAPTISTE LABAT WEBSITE</h1>
+    <div class="image-container">
+        <img src="jean.jpg" alt="Jean Baptiste Labat" class="cool-image">
+    </div>
+    <div id="did-you-know">
+        <h3>Did You Know?</h3>
+        <div id="fact-container">
+            <!-- Facts will be displayed here -->
+        </div>
+    </div>
+    <div class="navigation">
+        <a href="index.html" class="nav-button current-page">1</a>
+        <a href="page2.html" class="nav-button">2</a>
+        <a href="page3.html" class="nav-button">3</a>
+        <a href="page4.html" class="nav-button">4</a>
+        <a href="quiz.html" class="nav-button">Quiz</a>
+    </div>
+
+    <script>
+        const facts = [
+            "Jean-Baptiste Labat introduced the method of double distillation to rum production in the Caribbean.",
+            "The Creebes were known for their advanced knowledge of medicinal plants in the Caribbean.",
+            "Labat's book 'Nouveau Voyage aux isles Françoises de l'Amérique' was published in 1722, nearly two decades after he left the Caribbean.",
+            "The Battle of Creebes vs Labat in 1703 significantly slowed European colonization efforts in parts of the Caribbean.",
+            "Jean-Baptiste Labat was not only a missionary but also worked as a planter and military engineer during his time in the Caribbean.",
+            "The Creebes' guerrilla warfare tactics were so effective that they influenced military strategies for years to come.",
+            "Labat's writings provide some of the most detailed accounts of Caribbean life in the early 18th century.",
+            "The Creebes had a complex spiritual system that was deeply connected to the natural environment of the Caribbean.",
+            "Jean-Baptiste Labat spent over a decade living and working in various parts of the Caribbean.",
+            "The legacy of the Creebes-Labat conflict continues to influence discussions about colonialism and indigenous resistance to this day."
+        ];
+
+        let currentFactIndex = 0;
+        const factContainer = document.getElementById('fact-container');
+
+        function displayFact() {
+            factContainer.textContent = facts[currentFactIndex];
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+        }
+
+        // Display initial fact
+        displayFact();
+
+        // Change fact every 10 seconds
+        setInterval(displayFact, 10000);
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.classList.contains('current-page')) {
+                        e.preventDefault();
+                        document.body.style.opacity = '0';
+                        setTimeout(() => {
+                            window.location.href = this.href;
+                        }, 500);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

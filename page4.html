@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Creebes Culture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #e6f3ff;
+            color: #333;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        .creebes-image {
+            float: right;
+            margin: 0 0 20px 20px;
+            max-width: 300px;
+            border: 5px solid #2c3e50;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.1em;
+            border-left: 4px solid #2c3e50;
+            padding-left: 20px;
+            margin: 20px 0;
+            background-color: #d1e8ff;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 10px 10px 0;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s ease-in-out;
+        }
+        .nav-button:hover {
+            background-color: #34495e;
+            transform: scale(1.1);
+        }
+        .current-page {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="index.html" class="nav-button">1</a>
+        <a href="page2.html" class="nav-button">2</a>
+        <a href="page3.html" class="nav-button">3</a>
+        <a href="page4.html" class="nav-button current-page">4</a>
+        <a href="quiz.html" class="nav-button">Quiz</a>
+		<a href="didyouknow.html" class="nav-button">Did You Know?</a>
+    </div>
+
+    <h1>The Creebes Culture: Guardians of the Caribbean</h1>
+
+    <img src="creebesclan.jpg" alt="Artistic representation of Creebes culture" class="creebes-image">
+
+    <p>The Creebes, a mysterious and powerful indigenous group, played a significant role in shaping the history of the Caribbean. Their culture, rich in tradition and deeply connected to the land, posed a formidable challenge to European colonization efforts.</p>
+
+    <h2>Origins and Society</h2>
+    <p>The exact origins of the Creebes remain shrouded in mystery. Anthropologists believe they developed a complex society long before European contact, with a sophisticated understanding of their environment and advanced agricultural techniques.</p>
+
+    <h2>Military Prowess</h2>
+    <p>Under the leadership of the enigmatic General Creebes, the group developed formidable military tactics. Their guerrilla warfare techniques, perfectly adapted to the dense Caribbean jungles, proved highly effective against European forces.</p>
+
+    <div class="quote">
+        "The Creebes moved like shadows through the forest, striking with precision and vanishing just as quickly." - Jean-Baptiste Labat
+    </div>
+
+    <h2>Spiritual Beliefs</h2>
+    <p>Creebes spirituality was deeply intertwined with nature. They believed in the sacred power of the land and sea, which fueled their fierce resistance against colonization attempts that threatened their way of life.</p>
+
+    <h2>Legacy</h2>
+    <p>The Creebes' successful resistance against Jean-Baptiste Labat and other colonial powers left an indelible mark on Caribbean history. Their tactics and determination became a symbol of indigenous resilience in the face of European expansion.</p>
+
+    <h2>Creebes Today</h2>
+    <p>While much of Creebes culture remains shrouded in secrecy, efforts are being made to preserve and document their unique heritage. Anthropologists and historians continue to study Creebes artifacts and oral traditions, slowly unraveling the mysteries of this fascinating civilization.</p>
+
+    <div class="quote">
+        "To understand the Creebes is to understand the true spirit of the Caribbean." - Dr. Maria Sanchez, Anthropologist
+    </div>
+
+    <p>The legacy of the Creebes serves as a reminder of the rich tapestry of cultures that have shaped the Caribbean, and the importance of preserving indigenous knowledge and traditions in our modern world.</p>
+
+    <div class="navigation">
+        <a href="index.html" class="nav-button">1</a>
+        <a href="page2.html" class="nav-button">2</a>
+        <a href="page3.html" class="nav-button">3</a>
+        <a href="page4.html" class="nav-button current-page">4</a>
+        <a href="quiz.html" class="nav-button">Quiz</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.classList.contains('current-page')) {
+                        e.preventDefault();
+                        document.body.style.opacity = '0';
+                        setTimeout(() => {
+                            window.location.href = this.href;
+                        }, 500);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
